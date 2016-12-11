@@ -11,8 +11,27 @@
 
 	/* additional stuff */
 	.borderBottom{
-		@brdr_width:4px;
-		/* border-bottom: solid @brdr_width @th_black; */
+		@brdr_width:1px;
+		 border-bottom: solid @brdr_width #fff; 
+	}
+	.button{
+		border-radius: 0px;
+		&.inverted{
+			background:none;
+			border:2px solid #fff;
+			text-align:center;
+			.flex-display();
+			.align-items(center);
+			.justify-content(center);
+			padding:5px 30px;
+			text-decoration: none;
+			color:#fff;
+			font-size: 14px;
+			&:hover{
+				background:#fff;
+				color:@th_black;
+			}
+		}
 	}
 
 	form{
@@ -80,31 +99,37 @@
 				.logo{
 					h1,h2,h3,h4,h5,h6,p{
 						font-size: 50px;
-						color:@th_black;
+						color:#fff;
 					}
 					img{
 						height: 100%;
 						width: auto;
 					}
 				}
-				.social{
+				ul{
 					list-style-type: none;
 					margin:0;
 					padding:0;
 					li{
 						display:inline-block;
 						margin:0 10px;
-						color:@th_black;
+						color:#fff;
 						font-size: 18px;
 						&:hover{
 							color:@th_orange;
 						}
 					}
-					&:before{
-						content:'social media';
-						font-size:12px;
-						margin-right: 10px;
+					&.social{
+						&:before{
+							content:'social media';
+							color: #fff;
+							font-size:12px;
+							margin-right: 10px;
+						}
 					}
+				}
+				.header_buttons{
+
 				}
 			}
 		}
@@ -116,13 +141,12 @@
 				overflow: hidden;
 			}
 			&.main-section{
+				padding-top: 0px;
 				background-color:#fff;
 				width: 100%;
 				height: 100vh;
-				min-height: 600px;
-				max-height: 1200px;
 				.flex-display();
-				.align-items(center);
+				.align-items(flex-start);
 				.justify-content(flex-start);
 				.container{
 					background-image: url('../img/bg3.jpg');
@@ -131,9 +155,10 @@
 					background-repeat: no-repeat;
 					.flex-display();
 					.align-items(center);
-					width: 90%;
+					width: 100%;
 					height: 80vh;
 					.box{
+						display: none;
 						padding: 25px;
 						background: #fff;
 						width: 50%;
